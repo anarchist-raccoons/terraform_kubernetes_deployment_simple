@@ -96,18 +96,17 @@ resource "kubernetes_limit_range" "default" {
   metadata {
     name = "${var.app_name}"
   }
-  spec = "${var.limitrange_default}"
-#  spec {
-#    limit {
-#      type = "Container"
-#      default = {
-#        memory = "${var.container_memory_limit}"
-#        cpu = "${var.container_cpu_limit}"
-#      }
-#      default_request = {
-#        memory = "${var.container_memory_request}"
-#        cpu = "${var.container_cpu_request}"
-#      }
-#    }
-#  }
+  spec {
+    limit {
+      type = "Container"
+      default = {
+        memory = "${var.container_memory_limit}"
+        cpu = "${var.container_cpu_limit}"
+      }
+      default_request = {
+        memory = "${var.container_memory_request}"
+        cpu = "${var.container_cpu_request}"
+      }
+    }
+  }
 }
