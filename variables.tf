@@ -45,6 +45,25 @@ variable "load_balancer_ip" {
   default = ""
 }
 
+variable "limitrange_default" {
+  type = object({
+    spec = object({
+      limit = object({
+        type = string
+        default = object({
+          memory = string
+          cpu = string
+        })
+        default_request = object({
+          memory = string
+          cpu = string
+        })
+      })
+    })
+  })
+  default = {}
+}  
+
 variable "container_memory_limit" { default = "" }
 variable "container_memory_request" { default = "" }
 
