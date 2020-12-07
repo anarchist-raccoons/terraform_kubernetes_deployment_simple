@@ -46,7 +46,7 @@ variable "load_balancer_ip" {
 }
 
 variable "limitrange_default" {
-  type = object({
+  type = "object({
     spec = object({
       limit = object({
         type = string
@@ -60,7 +60,7 @@ variable "limitrange_default" {
         })
       })
     })
-  })
+  })"
   default = {}
 }  
 
