@@ -96,7 +96,7 @@ resource "kubernetes_limit_range" "default" {
   metadata {
     name = "${var.app_name}"
   }
-  spec = var.limitrange_default
+  spec = "${var.limitrange_default}"
 #  spec {
 #    limit {
 #      type = "Container"
